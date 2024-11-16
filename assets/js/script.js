@@ -3,23 +3,26 @@ const boton = document.querySelector('#agregarTarea')
 const parrafo_total = document.querySelector('.total')
 const parrafo_realizadas = document.querySelector('.realizadas')
 const ul = document.querySelector('#tareas')
-const tareas = []
+const tareas = [
+    {id:1731516529001, nombre:"tarea 1", realizada:false, check:""},
+    {id:1731516529002, nombre:"tarea 2", realizada:false, check:""},
+    {id:1731516529003, nombre:"tarea 3", realizada:false, check:""}
+]
 
 parrafo_total.innerHTML = tareas.length
 parrafo_realizadas.innerHTML = 0
 let realizadas = 0
+renderTareas()
 
 boton.addEventListener('click', ()=>{
     let nuevaTarea = {id:Date.now(),nombre:input.value, realizada:false, check:""}
     if (nuevaTarea.nombre != ""){
         tareas.push(nuevaTarea)
-    input.value = ""
-    renderTareas()
+        input.value = ""
+        renderTareas()
     }else{
         alert("Se requiere escribir una tarea")
-    }
-    
-    
+    }    
 })
 
 
